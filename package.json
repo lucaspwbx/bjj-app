@@ -4,8 +4,7 @@
   "private": true,
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
-    "test": "mocha --require react-native-mock/mock.js --compilers js:babel-core/register --recursive test/*.js",
-    "flow": "flow check
+    "test": "mocha --require react-native-mock/mock.js --compilers js:babel-core/register --recursive test/*/*.js"
   },
   "dependencies": {
     "immutable": "^3.7.6",
