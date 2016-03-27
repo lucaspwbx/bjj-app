@@ -21,7 +21,7 @@ describe('counter reducer', () => {
 
   it('should handle DECREMENT', () => {
     expect(
-      reducer(2, { type: 'DECREMENT' })
+      reducer({ count: 2 }, { type: 'DECREMENT' })
     ).to.deep.equal({
       count: 1,
     });
