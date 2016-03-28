@@ -8,9 +8,9 @@ import { connect } from 'react-redux';
 //   state: state.counter
 // }))
 class CounterApp extends Component {
-  constructor(props) {
-    super(props);
-  }
+  //constructor(props) {
+    //super(props);
+  //}
 
   render() {
     const { state, actions } = this.props;

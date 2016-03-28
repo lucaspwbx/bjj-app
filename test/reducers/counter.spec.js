@@ -1,6 +1,6 @@
 import { expect } from 'chai';
 import reducer from '../../src/reducers/counter';
-import * as types from '../../src/actions/actionTypes';
+// import * as types from '../../src/actions/actionTypes';
 
 describe('counter reducer', () => {
   it('should return the initial state', () => {
