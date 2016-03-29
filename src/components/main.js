@@ -32,24 +32,32 @@ const styles = StyleSheet.create({
 });
 
 class Main extends Component {
+  openAddTechniqueScreen() {
+    console.log('open add technique view');
+  }
   render() {
-    //const { techniques, addTechnique, setPositionFilter } = this.props;
+    const { techniques, addTechnique, setPositionFilter } = this.props;
+    console.log(techniques);
 
     return (
       <View style={styles.container}>
         <Button
+          onPress={this.openAddTechniqueScreen.bind(this)}
           bgStyle={styles.button}
           fgStyle={styles.buttonText}
         >Adicionar tecnica</Button>
         <Button
+          onPress={this.openAddTechniqueScreen.bind(this)}
           bgStyle={styles.button}
           fgStyle={styles.buttonText}
         >Tecnicas</Button>
         <Button
+          onPress={this.openAddTechniqueScreen.bind(this)}
           bgStyle={styles.button}
           fgStyle={styles.buttonText}
         >Campeonatos</Button>
         <Button
+          onPress={this.openAddTechniqueScreen.bind(this)}
           bgStyle={styles.button}
           fgStyle={styles.buttonText}
         >Academias</Button>

@@ -1,7 +1,12 @@
 import * as types from '../actions/actionTypes';
 
 const initialState = {
-  techniques: [],
+  techniques: [{
+    name: 'Foo',
+    description: 'Bar',
+    position: 'Closed guard',
+  },
+],
 };
 
 export default function techniques(state = initialState, action = {}) {

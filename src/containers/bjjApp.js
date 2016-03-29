@@ -4,27 +4,12 @@ import Main from '../components/main';
 import * as techniqueActions from '../actions/techniqueActions';
 import { connect } from 'react-redux';
 
-// @connect(state => ({
-//   state: state.counter
-// }))
-// class CounterApp extends Component {
-//   render() {
-//     const { state, actions } = this.props;
-//     return (
-//       <Counter
-//         counter={state.count}
-//         {...actions}
-//       />
-//     );
-//   }
-// }
 class BJJApp extends React.Component {
   render() {
-    console.log(this.props);
-    const { state, actions } = this.props;
+    const { techniques, actions } = this.props;
     return (
       <Main
-        techniques={[]}
+        techniques={techniques}
         {...actions}
       />
     );
@@ -40,11 +25,3 @@ function mapDispatchToProps(dispatch) {
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(BJJApp);
-
-// export default connect(state => ({
-//   techniques: state.techniques,
-// }),
-//   (dispatch) => ({
-//     actions: bindActionCreators(techniqueActions, dispatch),
-//   })
-// )(BJJApp);
