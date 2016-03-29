@@ -1,5 +1,5 @@
-import counter from './counter';
+import techniques from './techniques';
 
 export {
-  counter,
+  techniques,
 };

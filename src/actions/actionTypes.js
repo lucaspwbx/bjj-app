@@ -1,2 +1,2 @@
-export const INCREMENT = 'INCREMENT';
-export const DECREMENT = 'DECREMENT';
+export const ADD_TECHNIQUE = 'ADD_TECHNIQUE';
+export const SET_POSITION_FILTER = 'SET_POSITION_FILTER';

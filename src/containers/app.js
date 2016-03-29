@@ -1,7 +1,7 @@
 import React from 'react-native';
 import { Provider } from 'react-redux';
 import store from '../store/configureStore';
-import CounterApp from './counterApp';
+import BJJApp from './bjjApp';
 
 /* following lines were moved to configureStore.js
 import { createStore, applyMiddleware, combineReducers } from 'redux';
@@ -27,7 +27,7 @@ export default class App extends React.Component {
 
 const App = () => (
   <Provider store={store}>
-    <CounterApp />
+    <BJJApp />
   </Provider>
 );
 
