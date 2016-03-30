@@ -18,7 +18,7 @@ Button.propTypes = {
   bgStyle: PropTypes.number.isRequired,
   fgStyle: PropTypes.number.isRequired,
   children: PropTypes.string.isRequired,
-  onPress: PropTypes.func.isRequired,
+  //onPress: PropTypes.func.isRequired,
 };
 
 export default Button;

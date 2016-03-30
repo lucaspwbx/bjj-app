@@ -4,9 +4,10 @@ import React, {
   StyleSheet,
   Component,
   View,
+  Navigator,
 } from 'react-native';
-
 import Button from './button';
+import AddTechniqueView from './addTechniqueView';
 
 const styles = StyleSheet.create({
   container: {
@@ -34,34 +35,53 @@ const styles = StyleSheet.create({
 class Main extends Component {
   openAddTechniqueScreen() {
     console.log('open add technique view');
+    this.nav.push({
+      name: 'addTechnique',
+    });
+  }
+  configureScene() {
+    return Navigator.SceneConfigs.FloatFromBottom;
+  }
+  onSaveNewTechnique() {
+    console.log('salvando nova tecnica');
+  }
+  onCancel() {
+    console.log('tentando cancelar');
+    this.nav.pop();
+  }
+  renderScene(route, nav) {
+    switch (route.name) {
+      case 'addTechnique':
+        return (
+          <AddTechniqueView
+            onSave={this.onSaveNewTechnique.bind(this)}
+            onCancel={this.onCancel.bind(this)}
+          />
+        );
+      default:
+        const { techniques, addTechnique, setPositionFilter } = this.props;
+        console.log(techniques);
+        return (
+          <View style={styles.container}>
+            <Button
+              onPress={this.openAddTechniqueScreen.bind(this)}
+              bgStyle={styles.button}
+              fgStyle={styles.buttonText}
+            >Adicionar tecnica</Button>
+          </View>
+      );
+    }
   }
   render() {
-    const { techniques, addTechnique, setPositionFilter } = this.props;
-    console.log(techniques);
-
     return (
-      <View style={styles.container}>
-        <Button
-          onPress={this.openAddTechniqueScreen.bind(this)}
-          bgStyle={styles.button}
-          fgStyle={styles.buttonText}
-        >Adicionar tecnica</Button>
-        <Button
-          onPress={this.openAddTechniqueScreen.bind(this)}
-          bgStyle={styles.button}
-          fgStyle={styles.buttonText}
-        >Tecnicas</Button>
-        <Button
-          onPress={this.openAddTechniqueScreen.bind(this)}
-          bgStyle={styles.button}
-          fgStyle={styles.buttonText}
-        >Campeonatos</Button>
-        <Button
-          onPress={this.openAddTechniqueScreen.bind(this)}
-          bgStyle={styles.button}
-          fgStyle={styles.buttonText}
-        >Academias</Button>
-      </View>
+      <Navigator
+        configureScene={this.configureScene}
+        initialRoute={{ name: 'inicial', index: 0 }}
+        ref={((nav) => {
+          this.nav = nav;
+        })}
+        renderScene={this.renderScene.bind(this)}
+      />
     );
   }
 }
